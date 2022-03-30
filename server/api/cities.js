@@ -43,10 +43,10 @@ router.get("/preferences/:model", async (req, res, next) => {
         : req.params.model === "LivingCost"
         ? LivingCost
         : req.params.model === "primaryStats"
-        ? PrimaryStats;
-        // : splitWeatherWords[0] === "Weather"
-        // ? Weather
-        // : "NO MODEL ERROR";
+        ? PrimaryStats
+        : splitWeatherWords[0] === "Weather"
+        ? Weather
+        : "NO MODEL ERROR";
     // let modelName = Healthcare
     let modelAttr =
       req.params.model === "Healthcare"
