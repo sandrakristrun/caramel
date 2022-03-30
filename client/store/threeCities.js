@@ -20,6 +20,7 @@ export const fetchThreeCities = (selection) => {
         const { data } = await axios.get(`/api/cities/preferences/${selection[i]}`)
         cityArray.push(data)
       }
+      console.log(cityArray)
 
       let bestCities = getBest3(cityArray);
 
