@@ -29,10 +29,10 @@ router.get("/", async (req, res, next) => {
 ///THREE CITIES
 router.get("/preferences/:model", async (req, res, next) => {
   try {
-    let splitWeatherWords =
-      req.params.model === "Weather-warm" || "Weather-snow"
-        ? req.params.model.split("-")
-        : "ERROR IN WEATHER SPLIT";
+    // let splitWeatherWords =
+    //   req.params.model === "Weather-warm" || "Weather-snow"
+    //     ? req.params.model.split("-")
+    //     : "ERROR IN WEATHER SPLIT";
     let modelName =
       req.params.model === "Healthcare"
         ? Healthcare
@@ -43,10 +43,10 @@ router.get("/preferences/:model", async (req, res, next) => {
         : req.params.model === "LivingCost"
         ? LivingCost
         : req.params.model === "primaryStats"
-        ? PrimaryStats
-        : splitWeatherWords[0] === "Weather"
-        ? Weather
-        : "NO MODEL ERROR";
+        ? PrimaryStats;
+        // : splitWeatherWords[0] === "Weather"
+        // ? Weather
+        // : "NO MODEL ERROR";
     // let modelName = Healthcare
     let modelAttr =
       req.params.model === "Healthcare"
@@ -78,8 +78,8 @@ router.get("/preferences/:model", async (req, res, next) => {
         ? [["avgMinTemp", "ASC"]]
         : "NO ORDER ERROR";
 
-    let modelWhere =
-      splitWeatherWords[1] === "snow" ? { month: "January" } : "";
+    // let modelWhere =
+    //   splitWeatherWords[1] === "snow" ? { month: "January" } : "";
 
 
     const threeCities = await modelName.findAll({
