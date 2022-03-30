@@ -80,8 +80,7 @@ router.get("/preferences/:model", async (req, res, next) => {
 
     let modelWhere =
       splitWeatherWords[1] === "snow" ? { month: "January" } : "";
-    console.log("IN ROUTER BODY MODEL NAME-------->>>>>>", modelName);
-    console.log("IN ROUTER BODY MODEL ATTR----->>>>>>", modelAttr);
+
 
     const threeCities = await modelName.findAll({
       where: modelWhere,
