@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import AllCities from "./AllCities";
 import { Link } from "react-router-dom";
 
@@ -15,7 +14,6 @@ export const Home = () => {
             <b>Dreaming of your next move?</b>
           </h1>
         </div>
-
         <div className="row">
           <div className="col-6">
             <h5>I know where I'm going.</h5>
@@ -25,7 +23,6 @@ export const Home = () => {
           <div className="col-6">
             <h5>I'm not sure where to go.</h5>
             <br />
-
             <Link role="button" aria-current="page" to="/preferences">
               <button className="nav-link-active btn btn-primary btn-sm survey">
                 Get Inspiration
@@ -38,13 +35,4 @@ export const Home = () => {
   );
 };
 
-/**
- * CONTAINER
- */
-const mapState = (state) => {
-  return {
-    username: state.auth.username,
-  };
-};
-
-export default connect(mapState)(Home);
+export default Home;
