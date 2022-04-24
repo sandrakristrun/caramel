@@ -23,11 +23,11 @@ class SingleCity extends Component {
     this.props.getCityWeather(this.props.match.params.cityId);
   }
 
-  componentDidUpdate(prevprops) {
-    if (prevprops.id != this.props.id) {
-      this.props.loadUser(this.props.id);
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.id != this.props.id) {
+  //     this.props.loadUser(this.props.id);
+  //   }
+  // }
 
   onClick() {
     this.props.favorite(this.props.singleCity.id, this.props.id);
@@ -364,6 +364,8 @@ class SingleCity extends Component {
     );
   }
 }
+
+
 
 const mapState = (state) => {
   return {

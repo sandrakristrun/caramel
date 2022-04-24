@@ -6,9 +6,6 @@ import AllCities from "./AllCities";
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
   <div>
-    {/* <center>
-      <h1 style={{ fontFamily: "Leckerli One", fontSize: 50 }}>Toto</h1>
-    </center> */}
     <nav>
       {isLoggedIn ? (
         <div>
@@ -146,16 +143,12 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
               </div>
             </div>
           </nav>
-          {/* The navbar will show these links before you log in */}
         </div>
       )}
     </nav>
   </div>
 );
 
-/**
- * CONTAINER
- */
 const mapState = (state) => {
   return {
     isLoggedIn: !!state.auth.id,

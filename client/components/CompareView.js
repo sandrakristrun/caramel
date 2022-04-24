@@ -19,9 +19,6 @@ export class CompareView extends React.Component {
     this.handleChange1 = this.handleChange1.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleChange3 = this.handleChange3.bind(this);
-    this.handleSubmit1 = this.handleSubmit1.bind(this);
-    this.handleSubmit2 = this.handleSubmit2.bind(this);
-    this.handleSubmit3 = this.handleSubmit3.bind(this);
   }
   componentDidMount() {
     this.props.getCities();
@@ -31,39 +28,26 @@ export class CompareView extends React.Component {
     this.setState({
       value1: e.target.value,
     });
-    this.handleSubmit1(e.target.value);
+    this.props.getCompareCity1(e.target.value);
   }
 
   handleChange2(e) {
     this.setState({
       value2: e.target.value,
     });
-    this.handleSubmit2(e.target.value);
+    this.props.getCompareCity2(e.target.value);
   }
 
   handleChange3(e) {
     this.setState({
       value3: e.target.value,
     });
-    this.handleSubmit3(e.target.value);
-  }
-
-  handleSubmit1(value) {
-    this.props.getCompareCity1(value);
-  }
-
-  handleSubmit2(value) {
-    this.props.getCompareCity2(value);
-  }
-
-  handleSubmit3(value) {
-    this.props.getCompareCity3(value);
+    this.props.getCompareCity3(e.target.value);
   }
 
   render() {
     const { value1, value2, value3 } = this.state;
     const cities = this.props.cities || []; //list of cities to choose from
-    console.log(this.props);
     const compareCities = this.props.compareCities || {};
     const city1 = compareCities.city1 || {};
     const city2 = compareCities.city2 || {};

@@ -1,19 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
-//import { getCityByName } from "../store/singleCity";
 import Transportation_Chart from "./Charts/Transportation_Chart";
 import GaugeChart from "react-gauge-chart";
 import "chart.js/auto";
 import Healthcare_Chart from "./Charts/Healthcare_Chart";
 import { Link } from "react-router-dom";
 
-/**
- * COMPONENT
- */
-class CompareCity extends Component {
-  render() {
-    console.log(this.props)
-    const city = this.props.city || {};
+
+const CompareCity = (props) => {
+    const city = props.city || {};
     const transportation = city.transportation || {};
     return (
       <div className="container text-center">
@@ -22,11 +17,9 @@ class CompareCity extends Component {
             <h3>{city.name}</h3>
           </Link>
         </div>
-
         <div className="row justify-content-center mb-2">
           <img className="city-image" src={city.imageUrlMobile}></img>
         </div>
-
         <div className="row justify-content-center compare-city-content mb-2">
           <h5>The Essentials</h5>
           <p>
@@ -42,7 +35,6 @@ class CompareCity extends Component {
             <b>Preschool:</b> ${city.livingCost.daycare}/month
           </p>
         </div>
-
         <div className="row justify-content-center compare-city-content mb-2">
           <center>
             <h5>Healthcare</h5>
@@ -84,11 +76,9 @@ class CompareCity extends Component {
             <h6>Overall Healthcare Rating</h6>
           </center>
         </div>
-
         <div className="row justify-content-center compare-city-content mb-2">
           <center>
             <h5>Environment</h5>
-
             <GaugeChart
               id="pollutionIndex"
               nrOfLevels={30}
@@ -126,7 +116,6 @@ class CompareCity extends Component {
             <h6>Overall Pollution Level</h6>
           </center>
         </div>
-
         <div className="row justify-content-center compare-city-content mb-2">
           <h5>Transportation</h5>
           <Transportation_Chart transportation={transportation} />
@@ -134,18 +123,6 @@ class CompareCity extends Component {
       </div>
     );
   }
-}
 
-// const mapState = (state) => {
-//   return {
-//     singleCity: state.singleCity,
-//   };
-// };
-
-// const mapDispatch = (dispatch) => {
-//   return {
-//     loadCity: (cityId) => dispatch(getCityByName(cityId)),
-//   };
-// };
 
 export default CompareCity;

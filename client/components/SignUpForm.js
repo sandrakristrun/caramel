@@ -91,12 +91,11 @@ const mapDispatch = (dispatch) => {
   return {
     getCities: () => dispatch(fetchCities()),
     handleSubmit(evt) {
-      console.log("***EVT.TARGET", evt.target)
       evt.preventDefault();
       const formName = evt.target.name;
       const username = evt.target.username.value;
       const password = evt.target.password.value;
-      const currentCity = currentCityValue
+      const currentCity = currentCityValue;
       const interests = evt.target.interests.value;
       dispatch(
         authenticateNewUser(username, password, currentCity, interests, formName)
