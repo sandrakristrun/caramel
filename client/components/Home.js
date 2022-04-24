@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 /**
  * COMPONENT
  */
-export const Home = (props) => {
+export const Home = () => {
   return (
     <div className="container-fluid homepage" align="center">
       <div className="homeText">

@@ -62,7 +62,7 @@ export class CompareView extends React.Component {
 
   render() {
     const { value1, value2, value3 } = this.state;
-    const cities = this.props.cities || [];
+    const cities = this.props.cities || []; //list of cities to choose from
     console.log(this.props);
     const compareCities = this.props.compareCities || {};
     const city1 = compareCities.city1 || {};

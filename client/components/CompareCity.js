@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getCityByName } from "../store/singleCity";
+//import { getCityByName } from "../store/singleCity";
 import Transportation_Chart from "./Charts/Transportation_Chart";
 import GaugeChart from "react-gauge-chart";
 import "chart.js/auto";
@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
  */
 class CompareCity extends Component {
   render() {
+    console.log(this.props)
     const city = this.props.city || {};
     const transportation = city.transportation || {};
     return (
@@ -44,10 +45,10 @@ class CompareCity extends Component {
 
         <div className="row justify-content-center compare-city-content mb-2">
           <center>
-            <h5>Healthcare</h5>          
+            <h5>Healthcare</h5>
             <GaugeChart
               id="healthIndex"
-              nrOfLevels={30} 
+              nrOfLevels={30}
               arcWidth = {0.3}
               colors={["red", "yellow", "green"]}
               animDelay={500}
@@ -62,7 +63,7 @@ class CompareCity extends Component {
             <a
               data-bs-toggle="tooltip"
               data-bs-placement="top"
-              title="About Overall Pollution Level: This figure is an estimation of the overall pollution in the city, based on surveys from visitors to the website Numbeo.com, 
+              title="About Overall Pollution Level: This figure is an estimation of the overall pollution in the city, based on surveys from visitors to the website Numbeo.com,
               a cost of living database. The biggest weight is given to air pollution, then to water pollution/accessibility, two main pollution factors."
             >
               <sup>
@@ -90,7 +91,7 @@ class CompareCity extends Component {
 
             <GaugeChart
               id="pollutionIndex"
-              nrOfLevels={30} 
+              nrOfLevels={30}
               colors={["green", "yellow", "red"]}
               arcWidth = {0.3}
               percent={city.pollution.indexPollution / 100}
@@ -135,16 +136,16 @@ class CompareCity extends Component {
   }
 }
 
-const mapState = (state) => {
-  return {
-    singleCity: state.singleCity,
-  };
-};
+// const mapState = (state) => {
+//   return {
+//     singleCity: state.singleCity,
+//   };
+// };
 
-const mapDispatch = (dispatch) => {
-  return {
-    loadCity: (cityId) => dispatch(getCityByName(cityId)),
-  };
-};
+// const mapDispatch = (dispatch) => {
+//   return {
+//     loadCity: (cityId) => dispatch(getCityByName(cityId)),
+//   };
+// };
 
-export default connect(mapState, mapDispatch)(CompareCity);
+export default CompareCity;

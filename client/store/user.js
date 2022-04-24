@@ -64,6 +64,7 @@ export const updateUser = (city, userId) => {
 export const favoriteCity = (cityId, userId) => {
   return async (dispatch) => {
     try{
+      console.log('hi', cityId, userId)
       const {data: updatedUser} = await axios.post(`/api/users/${userId}`, {cityId})
       dispatch(_updateUser(updatedUser))
     }

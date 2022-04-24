@@ -88,6 +88,7 @@ router.put("/:userId", async (req, res, next) => {
 //Add a new favorite city to a user to api/users/
 router.post("/:userId", async (req, res, next) => {
   try {
+    console.log('REQ.BODY',req.body)
     const { cityId } = req.body;
     const user = await User.findByPk(req.params.userId);
     const city = await City.findByPk(cityId);
