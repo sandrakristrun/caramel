@@ -8,14 +8,10 @@ const Weather_Chart = (props) => {
   let maxTempsObj = {};
   let rainObj = {};
 
-  let minTemps = props.weather.forEach((item) => {
-    return (minTempsObj[item.month] = item.avgMinTemp);
-  });
-  let maxTemps = props.weather.forEach((item) => {
-    return (maxTempsObj[item.month] = item.avgMaxTemp);
-  });
-  let rain = props.weather.forEach((item) => {
-    return (rainObj[item.month] = item.avgDailyRainfall);
+  props.weather.forEach((item) => {
+      minTempsObj[item.month] = item.avgMinTemp
+      maxTempsObj[item.month] = item.avgMaxTemp
+      rainObj[item.month] = item.avgDailyRainfall
   });
 
   const months = [

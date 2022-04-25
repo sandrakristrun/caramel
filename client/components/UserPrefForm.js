@@ -47,8 +47,13 @@ class UserPrefForm extends React.Component {
             </button>
           </div>
           <div>
-            <button type="button" value="Pollution" onClick={this.handleClick} className="btn btn-outline-secondary" data-bs-toggle="button">
+            <button type="button" value="Pollution-index" onClick={this.handleClick} className="btn btn-outline-secondary" data-bs-toggle="button">
               Low Pollution
+            </button>
+          </div>
+          <div>
+            <button type="button" value="Pollution-green" onClick={this.handleClick} className="btn btn-outline-secondary" data-bs-toggle="button">
+              Green Spaces
             </button>
           </div>
           <div>
@@ -63,6 +68,16 @@ class UserPrefForm extends React.Component {
           <div>
             <button type="button" value="LivingCost" onClick={this.handleClick} className="btn btn-outline-secondary" data-bs-toggle="button">
               Low Daycare Cost
+            </button>
+          </div>
+          <div>
+            <button type="button" value="Weather-warm" onClick={this.handleClick} className="btn btn-outline-secondary" data-bs-toggle="button">
+              Warm weather
+            </button>
+          </div>
+          <div>
+            <button type="button" value="Weather-cold" onClick={this.handleClick} className="btn btn-outline-secondary" data-bs-toggle="button">
+              Cold weather
             </button>
           </div>
           <div>

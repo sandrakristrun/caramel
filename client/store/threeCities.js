@@ -17,20 +17,23 @@ export const fetchThreeCities = (selection) => {
       const cityArray = [];
 
       for(let i = 0; i < selection.length; i++){
-        const { data } = await axios.get(`/api/cities/preferences/${selection[i]}`)
+        let [model, param] = selection[i].split('-')
+        console.log(model, param)
+        const { data } = await axios.get(`/api/cities/preferences/${model}?param=${param}`)
+        console.log(data)
         cityArray.push(data)
       }
       console.log(cityArray)
 
       let bestCities = getBest3(cityArray);
-
+      console.log('BEST', bestCities)
       //find the data on the best 3 cities from cityArray
       let result = [];
 
-      for(let i = 0; i < cityArray[0].length; i++){
-        for(let j = 0; j < bestCities.length; j++){
-          let cityData = cityArray[0][i];
-          let bestCityId = bestCities[j][0];
+      for(let i = 0; i < bestCities.length; i++){
+        for(let j = 0; j < cityArray[0].length; j++){
+          let cityData = cityArray[0][j];
+          let bestCityId = bestCities[i][0];
 
           if(cityData.cityId === bestCityId){
             result.push(cityData)

@@ -10,12 +10,13 @@ export function getBest3(cityArray){
       let city = cityArray[i][j]
       if(!cityRankings[city.cityId]){
         cityRankings[city.cityId] = points;
-      } else{
+      } else {
         cityRankings[city.cityId] += points;
       }
       points++;
     }
   }
+  console.log(cityRankings)
   return sort(cityRankings).slice(0,3)
 }
 function sort(cityObj){

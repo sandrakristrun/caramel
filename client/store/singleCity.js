@@ -1,5 +1,4 @@
 import axios from "axios";
-import history from "../history";
 
 const GET_CITY = "GET_CITY";
 
@@ -30,10 +29,6 @@ export const getCityByName = (cityName) => async (dispatch) => {
 };
 
 
-
-/**
- * REDUCER
- */
 export default function singleCityReducer(state = {}, action) {
   switch (action.type) {
     case GET_CITY:

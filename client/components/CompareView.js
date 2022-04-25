@@ -20,6 +20,7 @@ export class CompareView extends React.Component {
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleChange3 = this.handleChange3.bind(this);
   }
+
   componentDidMount() {
     this.props.getCities();
   }

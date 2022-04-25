@@ -21,7 +21,6 @@ export const fetchCities = () => {
   };
 };
 
-// Sub-Reducer
 const initialState = [];
 
 export default (state = initialState, action) => {

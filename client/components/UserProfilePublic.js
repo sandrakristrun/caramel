@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchPublicUser } from "../store/user";
 
-/**
- * COMPONENT
- */
+
 class UserProfilePublic extends Component {
 
   componentDidMount() {

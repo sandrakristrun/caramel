@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchSingleUser } from "../store/user";
 
-/**
- * COMPONENT
- */
 class UserProfile extends Component {
   componentDidMount() {
     this.props.loadUser(this.props.id);
